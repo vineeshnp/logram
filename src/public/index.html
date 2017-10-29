@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Logram - log transporter</title>
+  </head>
+  <body style="background-color:#222">
+    <pre><code class="html" id="terminal"></code></pre>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.js"></script>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arta.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        var socket = io.connect(window.href);
+        socket.on('line', function (data) {
+          $('#terminal').append('<br>'+htmlEntities(data.payload.toString()));
+          console.log(data);
+        });
+        
+        function htmlEntities(str) {
+          return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+    </script>
+  </body>
+</html>
+
