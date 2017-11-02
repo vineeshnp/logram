@@ -76,6 +76,21 @@ Now if you go to http://your-ip:9887 you could see the logram braodcasting the l
 
 The main intention of logram was make it flexible to use it in an ongoing nodejs projects. Below documentation will help in enabling logram in an existing project.
 
+All we have to do is add the below code to your `index.js` file.
+
+```js
+const logram = require('logram');
+
+const config = {
+  "logFile" : "/home/user/.pm2/logs/socket-out-0.log",
+  "errorFile" : "/home/user/.pm2/logs/socket-error-0.log",
+  "port" : 9887
+}
+
+logram.run(config);
+
+```
+
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
@@ -101,3 +116,4 @@ This project is licensed under the MIT License.
 ## Acknowledgments
 
 * Thanks to socket.io and tail modules which run under the project.
+* Made with ❤ [Vim](http://www.vim.org/). 
