@@ -1,5 +1,4 @@
 const logram = require('./src/logram');
-const fs = require('fs');
 
 class logramClass{
   verifyConfig() {
