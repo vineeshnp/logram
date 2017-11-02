@@ -1,6 +1,20 @@
 const logram = require('./src/logram');
 const fs = require('fs');
 
-let config = fs.readFileSync( __dirname + '/config.json','UTF-8');
-config = JSON.parse(config)
-logram(config.logFile, config.errorFile, config.port);
+class logramClass{
+  verifyConfig() {
+
+  }
+
+  /**
+   * Run the logram module
+   * @param {File} config
+   * @public
+   */
+  static run(configFile) {
+    let config = JSON.parse(configFile);
+    logram(config.logFile, config.errorFile, config.port);
+  }
+}
+
+module.exports = logramClass;
