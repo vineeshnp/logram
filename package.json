@@ -1,7 +1,7 @@
 {
   "name": "logram",
-  "version": "0.0.1",
-  "description": "Logram is a simple web server which can broadcast the server logs to browser.",
+  "version": "0.0.2",
+  "description": "View the server logs on browser. Logram enables easy transport of server logs to browser.",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/"
+    "url": "https://github.com/vineeshnp/logram.git"
   },
   "keywords": [
     "server-logs",
