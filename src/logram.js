@@ -25,12 +25,13 @@ let logram = (file, errorFile, port) => {
       socket.emit('line',{ payload : data});
     });
 
-    tailError = new Tail(errorFile);
-    tailError.on('line', function(data) {
-      console.log('Watching for error logs started');
-      socket.emit('line',{ payload : data});
-    });
-
+    if(errorFile != null){
+      tailError = new Tail(errorFile);
+      tailError.on('line', function(data) {
+        console.log('Watching for error logs started');
+        socket.emit('line',{ payload : data});
+      });
+    }
 
     tail.on('error', function(error) {
       console.log(`Error on watching log, ${error}`);
