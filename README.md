@@ -36,8 +36,8 @@ Inorder to run logram, we need a configuration file. Then contents of the config
 
 ```js
 {
-  "logFile" : "/home/user/.pm2/logs/socket-out-0.log",
-  "errorFile" : "/home/user/.pm2/logs/socket-error-0.log",
+  "logFile" : "/var/log/apache2/access.log",
+  "errorFile" : "/var/log/apache2/error.log",
   "port" : 9887
 }
 
@@ -55,10 +55,11 @@ A sample code of index.js file would look like this.
 const logram = require('logram');
 
 const config = {
-  "logFile" : "/home/user/.pm2/logs/socket-out-0.log",
-  "errorFile" : "/home/user/.pm2/logs/socket-error-0.log",
+  "logFile" : "/var/log/apache2/access.log",
+  "errorFile" : "/var/log/apache2/error.log",
   "port" : 9887
 }
+
 
 logram.run(config);
 
@@ -82,18 +83,14 @@ All we have to do is add the below code to your `index.js` file.
 const logram = require('logram');
 
 const config = {
-  "logFile" : "/home/user/.pm2/logs/socket-out-0.log",
-  "errorFile" : "/home/user/.pm2/logs/socket-error-0.log",
+  "logFile" : "/var/log/apache2/access.log",
+  "errorFile" : "/var/log/apache2/error.log",
   "port" : 9887
 }
 
 logram.run(config);
 
 ```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
