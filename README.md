@@ -1,4 +1,4 @@
-# Logram - log tranporter
+# Logram - log transporter
 Logram will transport your server logs to browser.
 
 Most of the time developer might need acess to server logs to debug live issues. And if the server access is denied for dev's they 
