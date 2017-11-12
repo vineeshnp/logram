@@ -27,7 +27,7 @@ let logram = (file, errorFile, port) => {
     if(errorFile != null){
       tailError = new Tail(errorFile);
       tailError.on('line', function(data) {
-        socket.emit('line',{ payload : data});
+        socket.emit('error_line',{ payload : data});
       });
     }
 
