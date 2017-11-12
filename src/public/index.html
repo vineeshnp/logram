@@ -17,6 +17,16 @@
           console.log(data);
         });
         
+        /**
+        * Error will be rendered in red color
+        */
+        socket.on('error_line', function (data) {
+          $('#terminal').append('<span style="color:red" ><br>'+htmlEntities(data.payload.toString())+'</span>');
+          console.log(data);
+        });
+        
+
+        
         function htmlEntities(str) {
           return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
         }
