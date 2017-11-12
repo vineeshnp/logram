@@ -1,6 +1,6 @@
 {
   "name": "logram",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "View the server logs on browser. Logram enables easy transport of server logs to browser.",
   "main": "index.js",
   "directories": {
