@@ -25,6 +25,7 @@ class logramClass{
     }
 
     if(!this.isExisting(config.errorFile)){
+      console.log(`${config.errorFile} is not available, error logs wont be broadcasted`);
       logram(config.logFile, null, config.port);
     }else{
       logram(config.logFile, config.errorFile, config.port);
